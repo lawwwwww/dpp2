@@ -1,0 +1,103 @@
+/**fluid laout**/
+	@media screen and (max-width: 760px)
+	{
+		.nav ul{
+			position:static;
+			display:block;
+		 
+				}
+	
+
+		.nav ul li, li a{
+			width:80%;
+				}
+	
+	
+		.nav li{
+			display:block;
+			   }
+		
+		header img{
+			width:65%;
+			
+		}
+	
+	}
+	
+	
+	
+
+	@media only screen and (max-width: 790px){
+	div.responsive {
+        width: 99.99%;
+		margin: 6px 0;
+		background-color:white;
+       
+	}
+	
+	.houses img{margin:20px 10px;}
+	
+	}
+
+	@media only screen and (max-width: 500px){
+	div.responsive {
+        width: 100%;
+		background-color:white;
+	}
+	.houses img{margin:20px 10px;}
+	
+	
+	}
+	
+	
+
+	div.clf:after {
+ 	content: "";
+    	display: table;
+    	clear: both;
+	}
+	@media only screen and (max-width: 700px){
+	div.book{padding:14px 25px;
+				float:right;}
+	
+	div.responsive {
+       
+		background-color:white;
+	}
+	.houses img{margin:20px 10px;}
+	}
+	
+	@media only screen and (max-width: 800px){
+	.houses img{margin:20px 10px;}
+	
+	.houses p{margin:30px 30px;}
+	 
+	 div.book{padding:14px 25px;
+				float:right;}
+				
+	div.responsive {
+       
+		background-color:white;
+	}
+	
+	}
+	
+@media only screen and (max-width: 900px){
+				
+	div.responsive {
+       
+		background-color:white;
+	}
+	.houses img{margin:20px 10px;}
+}
+	
+@media only screen and (max-width: 1500px){
+				
+	div.responsive {
+       
+		background-color:white;
+	}
+	.houses img{margin:20px 10px;}
+	
+}
+	/**fiuld layout**/
