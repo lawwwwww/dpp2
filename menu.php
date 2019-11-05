@@ -51,7 +51,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keywords" content="Cafe">
 	<link href="style.css" rel="stylesheet"/>
-	<link href = "enhancement.css" rel = "stylesheet"/>
     </head>
 	
 <nav class="nav">
@@ -94,9 +93,8 @@
 							<div class="responsive" style="margin-left:100px; width:15%;">
 							
 							<form method="post" action="menu.php?action=add&id=<?php echo $row["foodcode"];?>">
-							
-							<div>
-							<img src="<?php echo $row["img"];?>" height="200" width="200">
+	
+							<img src="<?php echo $row["img"];?>" height="200" width="200"/>
 							<h4 class="text-info"><?php echo $row["dishname"];?></h4>
 							<h4 class="text-danger">RM<?php echo $row["price"];?></h4>
 							<input type="text" name="quantity" class="form-control" value="1" style="width:8%"/>
@@ -106,24 +104,12 @@
 							<input type="hidden" name="hidden_foodcode" value="<?php echo $row["foodcode"];?>"/>
 							<br/>
 							<input type="submit" value="Add to cart" name="add_to_cart" style="margin-left:0px;" class="btn btn-success"/>
-							</div>
-							</div>
 							
 							</form>
-					</div>
+					</div></div>
 					</section>
 					<?php }}?>
-					<div class="sidenav" style="
-	margin:10px;
-    height: 100%;
-    width: 25%;
-    position: fixed;
-    z-index: 0;
-    top: 0;
-    right: 0;
-	float:right;
-    overflow-x: hidden;
-    padding: 60px 10px 10px 10px;">
+					<div class="sidenav" >
 						<br/>
 						<h3>Order Details</h3>
 						
@@ -189,7 +175,7 @@
             <!-- /.col -->
         </div>
         <!-- /.row -->
-    
+    </div>
 
 </body>
 </html>
