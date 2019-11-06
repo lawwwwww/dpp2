@@ -1,191 +1,128 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Menu Records</title>
-<link rel="stylesheet" href="dist/bootstrap.min.css" type="text/css" media="all">
-<link href="dist/jquery.bootgrid.css" rel="stylesheet" />
-<script src="dist/jquery-1.11.1.min.js"></script>
-<script src="dist/bootstrap.min.js"></script>
-<script src="dist/jquery.bootgrid.min.js"></script>
-</head>
-<body>
-	<div class="container">
-      <div class="">
-        <h1>Menu Records</h1>
-        <div class="col-sm-8">
-		<div class="well clearfix">
-			<div class="pull-right"><button type="button" class="btn btn-xs btn-primary" id="command-add" data-row-id="0">
-			<span class="glyphicon glyphicon-plus"></span> Record</button></div></div>
-		<table id="menu_grid" class="table table-condensed table-hover table-striped" width="60%" cellspacing="0" data-toggle="bootgrid">
-			<thead>
-				<tr>
-					<th data-column-id="foodcode" data-type="numeric" data-identifier="true">Food Code</th>
-					<th data-column-id="dishname">Dish Name</th>
-					<th data-column-id="description">Category</th>
-					<th data-column-id="price">Price</th>
-					<th data-column-id="commands" data-formatter="commands" data-sortable="false">Commands</th>
-				</tr>
-			</thead>
-		</table>
-    </div>
-      </div>
-    </div>
-	
-<div id="add_model" class="modal fade">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">Add Menu</h4>
-            </div>
-            <div class="modal-body">
-                <form method="post" id="frm_add">
-				<input type="hidden" value="add" name="action" id="action">
-				  <div class="form-group">
-                    <label for="name" class="control-label">Dish Name:</label>
-                    <input type="text" class="form-control" id="dishname" name="dishname"/>
-                  </div>
-                  <div class="form-group">
-                    <label for="salary" class="control-label">Category:</label>
-                    <input type="text" class="form-control" id="description" name="description"/>
-                  </div>
-				  <div class="form-group">
-                    <label for="salary" class="control-label">Price:</label>
-                    <input type="text" class="form-control" id="price" name="price"/>
-                  </div>
-                
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" id="btn_add" class="btn btn-primary">Save</button>
-            </div>
-			</form>
-        </div>
-    </div>
-</div>
-<div id="edit_model" class="modal fade">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">Edit Menu</h4>
-            </div>
-            <div class="modal-body">
-                <form method="post" id="frm_edit">
-				<input type="hidden" value="edit" name="action" id="action">
-				<input type="hidden" value="0" name="edit_id" id="edit_id">
-                  <div class="form-group">
-                    <label for="name" class="control-label">Dish Name:</label>
-                    <input type="text" class="form-control" id="edit_dishname" name="edit_dishname"/>
-                  </div>
-                  <div class="form-group">
-                    <label for="salary" class="control-label">Category:</label>
-                    <input type="text" class="form-control" id="edit_description" name="edit_description"/>
-                  </div>
-				  <div class="form-group">
-                    <label for="salary" class="control-label">Price:</label>
-                    <input type="text" class="form-control" id="edit_price" name="edit_price"/>
-                  </div>
-                
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" id="btn_edit" class="btn btn-primary">Save</button>
-            </div>
-			</form>
-        </div>
-    </div>
-</div>
-</body>
-</html>
-<script type="text/javascript">
-$( document ).ready(function() {
-	var grid = $("#menu_grid").bootgrid({
-		ajax: true,
-		rowSelect: true,
-		post: function ()
-		{
-			/* To accumulate custom parameter with the request object */
-			return {
-				id: "b0df282a-0d67-40e5-8558-c9e93b7befed"
-			};
-		},
-		
-		url: "response.php",
-		formatters: {
-		        "commands": function(column, row)
-		        {
-		            return "<button type=\"button\" class=\"btn btn-xs btn-default command-edit\" data-row-id=\"" + row.id + "\"><span class=\"glyphicon glyphicon-edit\"></span></button> " + 
-		                "<button type=\"button\" class=\"btn btn-xs btn-default command-delete\" data-row-id=\"" + row.id + "\"><span class=\"glyphicon glyphicon-trash\"></span></button>";
-		        }
-		    }
-   }).on("loaded.rs.jquery.bootgrid", function()
-{
-    /* Executes after data is loaded and rendered */
-    grid.find(".command-edit").on("click", function(e)
-    {
-        //alert("You pressed edit on row: " + $(this).data("row-id"));
-			var ele =$(this).parent();
-			var g_id = $(this).parent().siblings(':first').html();
-            var g_name = $(this).parent().siblings(':nth-of-type(2)').html();
-/*console.log(g_id);
-                    console.log(g_name);*/
+<?php
 
-		//console.log(grid.data());//
-		$('#edit_model').modal('show');
-					if($(this).data("row-id") >0) {
-							
-                                // collect the data
-                               // $('#edit_id').val(ele.siblings(':first').html()); // in case we're changing the key
-                                $('#edit_dishname').val(ele.siblings(':nth-of-type(2)').html());
-                                $('#edit_description').val(ele.siblings(':nth-of-type(3)').html());
-                                $('#edit_price').val(ele.siblings(':nth-of-type(4)').html());
-					} else {
-					 alert('Now row selected! First select row, then click edit button');
-					}
-    })
-	
-	.end().find(".command-delete").on("click", function(e)
-    {
-	
-		var conf = confirm('Delete ' + $(this).data("row-id") + ' items?');
-					alert(conf);
-                    if(conf){
-                               // $.post('response.php', { id: $(this).data("row-id"), action:'delete'}
-                                 //   , function(){
-                                        // when ajax returns (callback), 
-										//$("#menu_grid").bootgrid('reload');
-                               // }); 
-								//$(this).parent('tr').remove();
-								//$("#employee_grid").bootgrid('remove', $(this).data("row-id"))
-                    }
-    });
-});
+// Start session
+session_start();
 
-function ajaxAction(action) {
-				data = $("#frm_"+action).serializeArray();
-				$.ajax({
-				  type: "POST",  
-				  url: "response.php",  
-				  data: data,
-				  dataType: "json",       
-				  success: function(response)  
-				  {
-					$('#'+action+'_model').modal('hide');
-					$("#menu_grid").bootgrid('reload');
-				  }   
-				});
-			}
-			
-			$( "#command-add" ).click(function() {
-			  $('#add_model').modal('show');
-			});
-			$( "#btn_add" ).click(function() {
-			  ajaxAction('add');
-			});
-			$( "#btn_edit" ).click(function() {
-			  ajaxAction('edit');
-			});
-});
-</script>
+// Get session data
+$sessData = !empty($_SESSION['sessData'])?$_SESSION['sessData']:'';
+
+// Get status message from session
+if(!empty($sessData['status']['msg'])){
+    $statusMsg = $sessData['status']['msg'];
+    $statusMsgType = $sessData['status']['type'];
+    unset($_SESSION['sessData']['status']);
+}
+
+// Load pagination class
+require_once 'PaginationClass.php';
+
+// Load and initialize database class
+require_once 'DBclass.php';
+$db = new DB();
+
+// Page offset and limit
+$perPageLimit = 2;
+$offset = !empty($_GET['page'])?(($_GET['page']-1)*$perPageLimit):0;
+
+// Get search keyword
+$searchKeyword = !empty($_GET['sq'])?$_GET['sq']:'';
+$searchStr = !empty($searchKeyword)?'?sq='.$searchKeyword:'';
+
+// Search DB query
+$searchArr = '';
+if(!empty($searchKeyword)){
+    $searchArr = array(
+        'foodcode' => $searchKeyword,
+        'dishname' => $searchKeyword,
+        'price' => $searchKeyword,
+        'category' => $searchKeyword
+    );
+}
+
+// Get count of the users
+$con = array(
+    'like_or' => $searchArr,
+    'return_type' => 'count'
+);
+$rowCount = $db->getRows('foodcode', $con);
+
+// Initialize pagination class
+$pagConfig = array(
+    'baseURL' => 'index.php'.$searchStr,   //<-----------here need to change name--->
+    'totalRows' => $rowCount,
+    'perPage' => $perPageLimit
+);
+$pagination = new Pagination($pagConfig);
+
+// Get users from database
+$con = array(
+    'like_or' => $searchArr,
+    'start' => $offset,
+    'limit' => $perPageLimit,
+    'order_by' => 'id DESC',
+);
+$users = $db->getRows('foodcode', $con);
+
+?>
+
+<!-- Display status message -->
+<?php if(!empty($statusMsg) && ($statusMsgType == 'success')){ ?>
+<div class="alert alert-success"><?php echo $statusMsg; ?></div>
+<?php }elseif(!empty($statusMsg) && ($statusMsgType == 'error')){ ?>
+<div class="alert alert-danger"><?php echo $statusMsg; ?></div>
+<?php } ?>
+
+<div class="row">
+    <div class="col-md-12 search-panel">
+        <!-- Search form -->
+        <form>
+        <div class="input-group">
+            <input type="text" name="sq" class="form-control" placeholder="Search by keyword..." value="<?php echo $searchKeyword; ?>">
+            <div class="input-group-btn">
+                <button class="btn btn-default" type="submit">
+                    <i class="glyphicon glyphicon-search"></i>
+                </button>
+            </div>
+        </div>
+        </form>
+        
+        <!-- Add link -->
+        <span class="pull-right">
+            <a href="addEdit.php" class="btn btn-primary"><i class="glyphicon glyphicon-plus"></i> New Record</a>
+        </span>
+    </div>
+    
+    <!-- Data list table --> 
+    <table class="table table-striped table-bordered">
+        <thead>
+			<tr>
+				<th>Food Code</th>
+				<th>Dish Name</th>
+				<th>Category</th>
+				<th>Price</th>
+			</tr>
+		</thead>
+        <tbody>
+            <?php
+            if(!empty($foodcode)){ $count = 0; 
+                foreach($foodcode as $fcode){ $count++;
+            ?>
+            <tr>
+                <td><?php echo '#'.$count; ?></td>
+                <td><?php echo $fcode['name']; ?></td>
+                <td><?php echo $fcode['email']; ?></td>
+                <td><?php echo $fcode['phone']; ?></td>
+                <td>
+                    <a href="addEdit.php?id=<?php echo $user['id']; ?>" class="glyphicon glyphicon-edit"></a>
+                    <a href="userAction.php?action_type=delete&id=<?php echo $user['id']; ?>" class="glyphicon glyphicon-trash" onclick="return confirm('Are you sure to delete?')"></a>
+                </td>
+            </tr>
+            <?php } }else{ ?>
+            <tr><td colspan="5">No user(s) found......</td></tr>
+            <?php } ?>
+        </tbody>
+    </table>
+    
+    <!-- Display pagination links -->
+    <?php echo $pagination->createLinks(); ?>
+</div>
