@@ -3,13 +3,18 @@ class User{
  
     // database connection and table name
     private $conn;
-    private $table_name = "users";
+    private $table_name = "employeetable";
  
     // object properties
-    public $id;
-    public $username;
-    public $password;
-    public $created;
+    public $empid;
+    public $name;
+	public $address;
+	public $contactinfo;
+	public $role;
+	public $gender;
+	public $email;
+	public $password;
+	public $hiredate;
  
     // constructor with $db as database connection
     public function __construct($db){
@@ -25,24 +30,24 @@ class User{
         $query = "INSERT INTO
                     " . $this->table_name . "
                 SET
-                    username=:username, password=:password, created=:created";
+                    email=:email, password=:password, hiredate=:hiredate";
     
         // prepare query
         $stmt = $this->conn->prepare($query);
     
         // sanitize
-        $this->username=htmlspecialchars(strip_tags($this->username));
+        $this->email=htmlspecialchars(strip_tags($this->email));
         $this->password=htmlspecialchars(strip_tags($this->password));
-        $this->created=htmlspecialchars(strip_tags($this->created));
+        $this->hiredate=htmlspecialchars(strip_tags($this->hiredate));
     
         // bind values
-        $stmt->bindParam(":username", $this->username);
+        $stmt->bindParam(":email", $this->email);
         $stmt->bindParam(":password", $this->password);
-        $stmt->bindParam(":created", $this->created);
+        $stmt->bindParam(":hiredate", $this->hiredate);
     
         // execute query
         if($stmt->execute()){
-            $this->id = $this->conn->lastInsertId();
+            $this->empid = $this->conn->lastInsertId();
             return true;
         }
     
@@ -53,11 +58,11 @@ class User{
     function login(){
         // select all query
         $query = "SELECT
-                    `id`, `username`, `password`, `created`
+                    `empid`, `email`, `password`, `hiredate`
                 FROM
                     " . $this->table_name . " 
                 WHERE
-                    username='".$this->username."' AND password='".$this->password."'";
+                    email='".$this->email."' AND password='".$this->password."'";
         // prepare query statement
         $stmt = $this->conn->prepare($query);
         // execute query
@@ -69,7 +74,7 @@ class User{
             FROM
                 " . $this->table_name . " 
             WHERE
-                username='".$this->username."'";
+                email='".$this->email."'";
         // prepare query statement
         $stmt = $this->conn->prepare($query);
         // execute query

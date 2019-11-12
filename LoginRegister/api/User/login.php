@@ -10,7 +10,7 @@ $db = $database->getConnection();
 // prepare user object
 $user = new User($db);
 // set ID property of user to be edited
-$user->username = isset($_GET['username']) ? $_GET['username'] : die();
+$user->email = isset($_GET['email']) ? $_GET['email'] : die();
 $user->password = base64_encode(isset($_GET['password']) ? $_GET['password'] : die());
 // read the details of user to be edited
 $stmt = $user->login();
@@ -21,14 +21,15 @@ if($stmt->rowCount() > 0){
     $user_arr=array(
         "status" => true,
         "message" => "Successfully Login!",
-        "id" => $row['id'],
-        "username" => $row['username']
+        "empid" => $row['empid'],
+        "email" => $row['email']
     );
+	
 }
 else{
     $user_arr=array(
         "status" => false,
-        "message" => "Invalid Username or Password!",
+        "message" => "Invalid email or Password!",
     );
 }
 // make it json format
