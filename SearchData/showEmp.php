@@ -146,7 +146,7 @@
                   </div>
 				  <div class="form-group">
                     <label for="hiredate" class="control-label">Hire Date:</label>
-                    <input type="text" class="form-control" id="edit_hiredate" name="hiredate"/>
+                    <input type="date" class="form-control" id="edit_hiredate" name="hiredate"/>
                   </div>
             </div>
             <div class="modal-footer">
