@@ -14,16 +14,17 @@
 
 <nav class="nav">
 		<ul>
-			<li><a href="menuSP.php">MANAGE MENU</a></li>
+			
+			<li><a href="manageMenu.php">MANAGE MENU</a></li>
 			<!--<li class="dropdown">
 				<a href="category.html" class="dropbtn">SALES REPORT</a>
 					<div class="dropdown-content">
 					</div>
 			</li>-->
 			
-			<li><a href="tbSP.php">MANAGE TABLE</a></li>
-			<li><a href="empSP.php">MANAGE EMPLOYEE</a></li>
-			<li><a href="payment1.php">SEARCH PAYMENT</a></li>
+			<li><a href="manageTables.php">MANAGE TABLE</a></li>
+			<li><a href="showEmp.php">MANAGE EMPLOYEE</a></li>
+			<li><a href="showTxn.php">SEARCH PAYMENT</a></li>
 		</ul>
 </nav>
 
