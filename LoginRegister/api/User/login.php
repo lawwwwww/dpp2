@@ -22,7 +22,10 @@ if($stmt->rowCount() > 0){
         "status" => true,
         "message" => "Successfully Login!",
         "empid" => $row['empid'],
-        "email" => $row['email']
+        "email" => $row['email'],
+		print "<a href='http://localhost/dpp2/showtable.php?action=addemp&value=".$row['empid']."'>Success! Go to Tables</a>",
+		
+		
     );
 	
 }
