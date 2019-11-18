@@ -7,7 +7,7 @@
 
 	.nav ul {
 		list-style-type: none;
-    		padding-left: 480px;
+    		padding-left: 440px;
     		padding-right: 10px;
     		overflow: hidden;
     		background-color: #27408b;
@@ -126,7 +126,6 @@ input[type=submit]:hover {
   background-color: #f2f2f2;
   padding: 20px;
   width:30%;
-
   margin-left:auto;
   margin-right:auto;
   text-align:center;
@@ -140,7 +139,8 @@ input[type=submit]:hover {
 
 .tableform
 {
-	margin-left:790px;
+	margin-left:auto;
 	margin-right:auto;
 	margin-top:50px;
+	text-align:center;
 }

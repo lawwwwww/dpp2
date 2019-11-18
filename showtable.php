@@ -29,7 +29,7 @@ $conn=mysqli_connect("localhost","root","","cafedb");
 </head>
 	
 <nav class="nav">
-		<ul>
+		<ul style="padding-left:610px;">
 			<li><a href="showtable.php">TABLE SUMMARY</a></li>
 			<li><a href="showSignatureDish.php">SIGNATURE FOOD</a></li>
 		</ul>
