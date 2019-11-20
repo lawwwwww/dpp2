@@ -58,7 +58,7 @@ class User{
     function login(){
         // select all query
         $query = "SELECT
-                    `empid`, `email`, `password`, `hiredate`
+                    `empid`, `email`, `password`, `hiredate`,`role`
                 FROM
                     " . $this->table_name . " 
                 WHERE
@@ -67,6 +67,7 @@ class User{
         $stmt = $this->conn->prepare($query);
         // execute query
         $stmt->execute();
+	
         return $stmt;
     }
     function isAlreadyExist(){

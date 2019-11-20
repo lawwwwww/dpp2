@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 // include database and object files
 include_once '../config/database.php';
 include_once '../objects/user.php';
@@ -17,6 +19,25 @@ $stmt = $user->login();
 if($stmt->rowCount() > 0){
     // get retrieved row
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
+ 
+ $user_arr=array
+ (
+ "empid"=>$row['empid'],
+ "role"=>$row['role'],
+ );
+ 
+ if($row['role']=='Admin')
+   {   header ('Location: http://localhost/dpp2/mainadmin.php');
+   } 
+   
+   else
+   {  
+	
+	$_SESSION['id']=$row['empid'];
+	header('Location:  http://localhost/dpp2/cook.php');
+	}
+   
+   /* $row = $stmt->fetch(PDO::FETCH_ASSOC);
     // create array
     $user_arr=array(
         "status" => true,
@@ -24,17 +45,12 @@ if($stmt->rowCount() > 0){
         "empid" => $row['empid'],
         "email" => $row['email'],
 		print "<a href='http://localhost/dpp2/cook.php?action=addemp&value=".$row['empid']."'>Success! Go to Tables</a>",
+	);	*/
 		
-		
-    );
-	
 }
 else{
-    $user_arr=array(
-        "status" => false,
-        "message" => "Invalid email or Password!",
-    );
+	?><script>
+	alert("Invalid email or Password");</script><?php
 }
 // make it json format
-print_r(json_encode($user_arr));
 ?>
