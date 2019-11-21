@@ -183,7 +183,7 @@ margin:auto;
 
 	<a href="manageTables.php"><button class="fbutton">MANAGE TABLE</button></a>
 	
-	<a href="showEmp.php"><button class="sbutton">MANAGE EMPLOYEE</button></a>
+	<a href="manageEmp.php"><button class="sbutton">MANAGE EMPLOYEE</button></a>
 	<a href="showTxn.php"><button class="tbutton">SEARCH PAYMENT</button></a>
 	<br/>
 	<br/>
