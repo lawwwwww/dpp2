@@ -30,7 +30,7 @@ if($stmt->rowCount() > 0){
    {   header ('Location: http://localhost/dpp2/mainadmin.php');
    } 
    
-   else
+   elseif($row['role']=='Staff')
    {  
 	
 	$_SESSION['id']=$row['empid'];
@@ -50,7 +50,8 @@ if($stmt->rowCount() > 0){
 }
 else{
 	?><script>
-	alert("Invalid email or Password");</script><?php
+	alert("Invalid email or Password");
+	window.location.href = "http://localhost/dpp2/LoginRegister/";</script><?php
+	
 }
-// make it json format
 ?>

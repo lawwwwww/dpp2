@@ -14,22 +14,20 @@ $user = new User($db);
 // set user property values
 $user->email = $_POST['email'];
 $user->password = base64_encode($_POST['password']);
+$user->role = $_POST['role'];
 $user->hiredate = date('Y-m-d H:i:s');
+
  
 // create the user
 if($user->signup()){
-    $user_arr=array(
-        "status" => true,
-        "message" => "Successfully Signup!",
-        "empid" => $user->empid,
-        "email" => $user->email
-    );
+    ?><script>
+	alert("Succesfully signed up! Please sign in");
+	window.location.href = "http://localhost/dpp2/LoginRegister/";</script><?php
 }
 else{
-    $user_arr=array(
-        "status" => false,
-        "message" => "email already exists!"
-    );
+    ?><script>
+	alert("This email already exists!");
+	window.location.href = "http://localhost/dpp2/LoginRegister/";</script><?php
 }
 print_r(json_encode($user_arr));
 ?>

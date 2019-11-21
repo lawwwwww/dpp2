@@ -30,7 +30,7 @@ class User{
         $query = "INSERT INTO
                     " . $this->table_name . "
                 SET
-                    email=:email, password=:password, hiredate=:hiredate";
+                    email=:email, password=:password, role =:role, hiredate=:hiredate";
     
         // prepare query
         $stmt = $this->conn->prepare($query);
@@ -38,12 +38,15 @@ class User{
         // sanitize
         $this->email=htmlspecialchars(strip_tags($this->email));
         $this->password=htmlspecialchars(strip_tags($this->password));
+		$this->role=htmlspecialchars(strip_tags($this->role));
         $this->hiredate=htmlspecialchars(strip_tags($this->hiredate));
-    
+ 
         // bind values
         $stmt->bindParam(":email", $this->email);
         $stmt->bindParam(":password", $this->password);
+		$stmt->bindParam(":role", $this->role);
         $stmt->bindParam(":hiredate", $this->hiredate);
+
     
         // execute query
         if($stmt->execute()){

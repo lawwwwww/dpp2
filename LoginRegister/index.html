@@ -10,6 +10,7 @@
   
 </head>
 <body>
+  <h2 style="text-align:center">CafePOS Company </h2>
   <div class="login-wrap">
   <div class="login-html">
     <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
@@ -47,10 +48,16 @@
           <label for="password" class="label">Confirm Password</label>
           <input id="password" type="password" required class="input" data-type="password">
         </div>
+		<div class="group">
+          <label for="role" class="label">Role</label>
+		  <select name="role" id="role" required type="text" class="input">
+			<option value="Staff">Staff</option>
+			<option value="Admin">Admin</option>
+		  </select>
+        </div>
         <div class="group">
           <input type="submit" class="button" value="Sign Up">
         </div>
-        <div class="hr"></div>
         <div class="foot-lnk">
           <label for="tab-1">Already Member?</a>
         </div>

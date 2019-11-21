@@ -78,11 +78,11 @@
                   </div>
 				  <div class="form-group">
                     <label for="password" class="control-label">Password:</label>
-                    <input type="text" class="form-control" id="password" name="password"/>
+                    <input type="password" class="form-control" id="password" name="password"/>
                   </div>
 				  <div class="form-group">
                     <label for="hiredate" class="control-label">Hire Date:</label>
-                    <input type="datetime" class="form-control" id="hiredate" name="hiredate"/>
+                    <input type="date" class="form-control" id="hiredate" name="hiredate"/>
                   </div>
 			<!--Close/Save button-->	  
             </div>
@@ -133,7 +133,7 @@
                   </div>
 				  <div class="form-group">
                     <label for="password" class="control-label">Password:</label>
-                    <input type="text" class="form-control" id="edit_password" name="password"/>
+                    <input type="password" class="form-control" id="edit_password" name="password"/>
                   </div>
 				  <div class="form-group">
                     <label for="hiredate" class="control-label">Hire Date:</label>
