@@ -35,8 +35,7 @@
 <body>
 	<div class="container">
       <div class="">
-        <h1>Order Records</h1>   
-        <div class="col-sm-8">
+        <h1>Order Records</h1>  
 		<div class="well clearfix">
 			<div class="pull-right"></div></div>
 		<table id="data_grid" class="table table-condensed table-hover table-striped" width="60%" cellspacing="0" data-toggle="bootgrid">
