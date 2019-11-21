@@ -21,6 +21,7 @@
 	<script src="dist/jquery-1.11.1.min.js"></script>
 	<script src="dist/bootstrap.min.js"></script>
 	<script src="dist/jquery.bootgrid.min.js"></script>
+	<script src="dropdownmenu.js"></script>
 	<link href="styleadmin.css" rel="stylesheet"/>
 
 <nav class="nav">
@@ -43,8 +44,7 @@
 		</ul>
 </nav>
 	
-	<script>
-	function downloadCSV(csv, filename) {
+	<script>	function downloadCSV(csv, filename) {
     var csvFile;
     var downloadLink;
 
@@ -91,7 +91,7 @@
 
 <body>
 <h1>Transaction List</h1>
-<table id="orderdatalist" id="orderdatalist"  class="table table-condensed table-hover table-striped" width="75%" cellspacing="5" data-toggle="bootgrid">
+<table id="orderdatalist"  class="table table-condensed table-hover table-striped" width="85%" cellspacing="5" data-toggle="bootgrid">
 	<thead>
 		<tr>
 			<th>Transaction ID</th>

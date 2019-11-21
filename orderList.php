@@ -22,6 +22,7 @@
 	<script src="dist/jquery-1.11.1.min.js"></script>
 	<script src="dist/bootstrap.min.js"></script>
 	<script src="dist/jquery.bootgrid.min.js"></script>
+	<script src="dropdownmenu.js"></script>
 	<link href="styleadmin.css" rel="stylesheet"/>
 
 <nav class="nav">

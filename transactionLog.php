@@ -19,7 +19,9 @@
 <script src="dist/jquery-1.11.1.min.js"></script>
 <script src="dist/bootstrap.min.js"></script>
 <script src="dist/jquery.bootgrid.min.js"></script>
+<script src="dropdownmenu.js"></script>
 <link href="styleadmin.css" rel="stylesheet"/>
+
 
 </head>
 
@@ -88,12 +90,13 @@
 }
 	</script>
 	
+
 </head>
 
 <body>
-
-<table id="orderdatalist" class="table table-condensed table-hover table-striped" width="75%" cellspacing="5" data-toggle="bootgrid">
 <h1>Transaction Log</h1>
+<table id="orderdatalist"  class="table table-condensed table-hover table-striped" width="75%" cellspacing="5" data-toggle="bootgrid">
+
 	<thead>
 		<tr>
 			<th>Order ID</th>
@@ -137,7 +140,6 @@
 		<button onClick="exportTableToCSV('TransactionLog.csv')">Generate CSV</button>
 	</tbody>
 </table>
-
 
 
 </body>

@@ -9,24 +9,21 @@
 <script src="dist/jquery-1.11.1.min.js"></script>
 <script src="dist/bootstrap.min.js"></script>
 <script src="dist/jquery.bootgrid.min.js"></script>
+<script src="dropdownmenu.js"></script>
 </head>
 	
 <nav class="nav">
 		<ul>
-			<li><a href="mainadmin.php">Home</a></li>
+			<li><a href="mainadmin.php">HOME</a></li>
 			<li class="dropdown">
-				<a class="dropbtn">Search & Manage</a>
+				<a class="dropbtn" onmouseover="showmanage()">MANAGE</a>
 				<div class="dropdown-content">
-				<a href="manageMenu.php">Menu</a>
-				<a href="manageTables.php">Table</a>
-				<a href="manageEmp.php">Employee</a>
-				<a href="showOrder.php">Order Records</a>
-				<a href="showTxn.php">Transaction Records</a>
+				<p id ="manage"></p>
 				</div>
-			</li>
+				</li>
 			
 			<li class="dropdown">
-				<a class="dropbtn" onmouseover="showpayment()">Payment</a>
+				<a class="dropbtn" onmouseover="showpayment()">PAYMENT</a>
 				<div class="dropdown-content">
 				<p id="about"></p></div>
 			</li>
@@ -35,6 +32,7 @@
 		</ul>
 </nav>
 
+
 <body>
 	<div class="container">
       <div class="">
@@ -42,16 +40,16 @@
 		<div class="well clearfix">
 			<div class="pull-right"><button type="button" class="btn btn-xs btn-primary" id="command-add" data-row-id="0">
 			<span class="glyphicon glyphicon-plus"></span> Record</button></div></div>
-		<table id="data_grid" class="table table-condensed table-hover table-striped" width="60%" cellspacing="0" data-toggle="bootgrid">
+		<table id="data_grid" class="table table-condensed table-hover table-striped" width="60%" cellspacing="5" data-toggle="bootgrid">
 			<thead>
 				<tr>
 			<!--##########################################################################################################-->
 					<th data-column-id="tableno" data-type="numeric" data-identifier="true">Table No</th>
-					<th data-column-id="servestatus">Serve Status</th>
-					<th data-column-id="reservedate">Reserve Date</th>
-					<th data-column-id="reservetime">Reserve Time</th>
-					<th data-column-id="reservename">Reserve Name</th>
-					<th data-column-id="availability">Availability</th>
+					<th data-column-id="servestatus">Status</th>
+					<th data-column-id="reservedate">Date</th>
+					<th data-column-id="reservetime">Time</th>
+					<th data-column-id="reservename">Name</th>
+					<th data-column-id="availability">Available</th>
 					<th data-column-id="commands" data-formatter="commands" data-sortable="false">Commands</th>
 				</tr>
 			</thead>
