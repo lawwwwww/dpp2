@@ -96,7 +96,7 @@
 	
 	function insertData($params) {
 		$data = array();
-		$sql = "INSERT INTO `employeetable` (name, address, contactinfo, role, gender, email, password, hiredate) VALUES('" . $params["name"] . "', '" . $params["address"] . "','" . $params["contactinfo"] . "', '" . $params["address"] . "', '" . $params["role"] . "', '" . $params["gender"] . "', '" . $params["email"] . "', '" . $params["password"] . "','"  . $params["hiredate"] . "');  ";
+		$sql = "INSERT INTO `employeetable` (name, address, contactinfo, role, gender, email, password, hiredate) VALUES('" . $params["name"] . "', '" . $params["address"] . "','" . $params["contactinfo"] . "', '" . $params["role"] . "', '" . $params["gender"] . "', '" . $params["email"] . "', '" . $params["password"] . "','"  . $params["hiredate"] . "');  ";
 		
 		echo $result = mysqli_query($this->conn, $sql);
 	}
@@ -111,7 +111,7 @@
 	
 	function deleteData($params) {
 		$data = array();
-		//print_R($_POST);die;
+		
 		$sql = "delete from `employeetable` WHERE empid='".$params["empid"]."'";
 		echo $result = mysqli_query($this->conn, $sql);
 	}
