@@ -1,4 +1,4 @@
-<
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,13 +10,33 @@
 <script src="dist/jquery-1.11.1.min.js"></script>
 <script src="dist/bootstrap.min.js"></script>
 <script src="dist/jquery.bootgrid.min.js"></script>
+<script src="dropdownmenu.js"></script>
 </head>
+
+<nav class="nav">
+		<ul>
+			<li><a href="mainadmin.php">HOME</a></li>
+			<li class="dropdown">
+				<a class="dropbtn" onmouseover="showmanage()">MANAGE</a>
+				<div class="dropdown-content">
+				<p id ="manage"></p>
+				</div>
+				</li>
+			
+			<li class="dropdown">
+				<a class="dropbtn" onmouseover="showpayment()">PAYMENT</a>
+				<div class="dropdown-content">
+				<p id="about"></p></div>
+			</li>
+	
+			<li><a href="http://localhost/dpp2/LoginRegister/">LOGOUT</a></li>
+		</ul>
+</nav>
 
 <body>
 	<div class="container">
       <div class="">
-        <h1>Employee Records</h1>   <!--change here oso-->
-        <div class="col-sm-8">
+        <h1>Employee Records</h1>
 		<div class="well clearfix">
 			<div class="pull-right"><button type="button" class="btn btn-xs btn-primary" id="command-add" data-row-id="0">
 			<span class="glyphicon glyphicon-plus"></span> Record</button></div></div>
@@ -47,7 +67,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">Add Employee</h4>   <!--change here oso-->
+                <h4 class="modal-title">Add Employee</h4>
             </div>
             <div class="modal-body">
                 <form method="post" id="frm_add">
@@ -181,7 +201,9 @@ $( document ).ready(function() {
 			var ele =$(this).parent();
 			var g_id = $(this).parent().siblings(':first').html();
             var g_name = $(this).parent().siblings(':nth-of-type(2)').html();
-
+console.log(g_id);
+                    console.log(g_name);
+					
 		$('#edit_model').modal('show');
 					if($(this).data("row-id") >0) {
 							
@@ -204,8 +226,8 @@ $( document ).ready(function() {
 	
 		var conf = confirm('Delete ' + $(this).data("row-id") + ' items?');
 					alert(conf);
-                    if(conf){         //change .php
-                                $.post('empResponse.php', { foodcode: $(this).data("row-id"), action:'delete'}
+                    if(conf){         
+                                $.post('empResponse.php', { empid: $(this).data("row-id"), action:'delete'}
                                     , function(){
                                         // when ajax returns (callback), 
 										$("#data_grid").bootgrid('reload');
