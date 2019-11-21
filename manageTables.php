@@ -38,8 +38,7 @@
 <body>
 	<div class="container">
       <div class="">
-        <h1>Table Records</h1>   <!--change here oso-->
-        <div class="col-sm-8">
+        <h1>Table Records</h1>   
 		<div class="well clearfix">
 			<div class="pull-right"><button type="button" class="btn btn-xs btn-primary" id="command-add" data-row-id="0">
 			<span class="glyphicon glyphicon-plus"></span> Record</button></div></div>
