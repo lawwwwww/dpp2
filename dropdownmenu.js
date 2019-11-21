@@ -8,6 +8,6 @@ function showpayment()
 
 function showmanage()
 {
-	var manage = ['<a href="manageMenu.php">MANAGE MENU</a><a href="manageTables.php">MANAGE TABLE</a><a href="showEmp.php">MANAGE EMPLOYEE</a>'];
+	var manage = ['<a href="manageMenu.php">MANAGE MENU</a><a href="manageTables.php">MANAGE TABLE</a><a href="manageEmp.php">MANAGE EMPLOYEE</a>'];
 	document.getElementById("manage").innerHTML = manage;
 }	
