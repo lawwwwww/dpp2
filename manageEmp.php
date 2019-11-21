@@ -12,10 +12,6 @@
 <script src="dist/jquery.bootgrid.min.js"></script>
 </head>
 
-<?php 
-include_once '../navadmin.php';
-?>
-
 <body>
 	<div class="container">
       <div class="">
@@ -111,7 +107,6 @@ include_once '../navadmin.php';
                 <form method="post" id="frm_edit">
 				<input type="hidden" value="edit" name="action" id="action">
 				<input type="hidden" value="0" name="edit_id" id="edit_id">
-				
 				  <div class="form-group">
                     <label for="name" class="control-label">Name:</label>
                     <input type="text" class="form-control" id="edit_name" name="name"/>
@@ -158,7 +153,7 @@ include_once '../navadmin.php';
 </html>
 <script type="text/javascript">
 $( document ).ready(function() {
-	var grid = $("#emp_grid").bootgrid({
+	var grid = $("#data_grid").bootgrid({
 		ajax: true,
 		rowSelect: true,
 		post: function ()
@@ -188,7 +183,7 @@ $( document ).ready(function() {
             var g_name = $(this).parent().siblings(':nth-of-type(2)').html();
 
 		$('#edit_model').modal('show');
-if($(this).data("row-id") >0) {
+					if($(this).data("row-id") >0) {
 							
                                 // collect the data
 								$('#edit_id').val(ele.siblings(':first').html()); 
