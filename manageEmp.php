@@ -128,36 +128,36 @@
 				<input type="hidden" value="edit" name="action" id="action">
 				<input type="hidden" value="0" name="edit_id" id="edit_id">
 				  <div class="form-group">
-                    <label for="name" class="control-label">Name:</label>
-                    <input type="text" class="form-control" id="edit_name" name="name"/>
+                    <label for="edit_name" class="control-label">Name:</label>
+                    <input type="text" class="form-control" id="edit_name" name="edit_name"/>
                   </div>
                   <div class="form-group">
-                    <label for="address" class="control-label">Address:</label>
-                    <input type="text" class="form-control" id="edit_address" name="address"/>
+                    <label for="edit_address" class="control-label">Address:</label>
+                    <input type="text" class="form-control" id="edit_address" name="edit_address"/>
                   </div>
 				  <div class="form-group">
-                    <label for="contact" class="control-label">Contact:</label>
-                    <input type="text" class="form-control" id="edit_contact" name="contact"/>
+                    <label for="edit_contact" class="control-label">Contact:</label>
+                    <input type="text" class="form-control" id="edit_contact" name="edit_contact"/>
                   </div>
 				  <div class="form-group">
-                    <label for="role" class="control-label">Role:</label>
-                    <input type="text" class="form-control" id="edit_role" name="role"/>
+                    <label for="edit_role" class="control-label">Role:</label>
+                    <input type="text" class="form-control" id="edit_role" name="edit_role"/>
                   </div>
 				  <div class="form-group">
-                    <label for="gender" class="control-label">Gender:</label>
-                    <input type="text" class="form-control" id="edit_gender" name="gender"/>
+                    <label for="edit_gender" class="control-label">Gender:</label>
+                    <input type="text" class="form-control" id="edit_gender" name="edit_gender"/>
                   </div>
 				  <div class="form-group">
-                    <label for="email" class="control-label">Email:</label>
-                    <input type="text" class="form-control" id="edit_email" name="email"/>
+                    <label for="edit_email" class="control-label">Email:</label>
+                    <input type="text" class="form-control" id="edit_email" name="edit_email"/>
                   </div>
 				  <div class="form-group">
-                    <label for="password" class="control-label">Password:</label>
-                    <input type="password" class="form-control" id="edit_password" name="password"/>
+                    <label for="edit_password" class="control-label">Password:</label>
+                    <input type="password" class="form-control" id="edit_password" name="edit_password"/>
                   </div>
 				  <div class="form-group">
-                    <label for="hiredate" class="control-label">Hire Date:</label>
-                    <input type="date" class="form-control" id="edit_hiredate" name="hiredate"/>
+                    <label for="edit_hiredate" class="control-label">Hire Date:</label>
+                    <input type="date" class="form-control" id="edit_hiredate" name="edit_hiredate"/>
                   </div>
 				  
             </div>
@@ -240,10 +240,10 @@ function ajaxAction(action) {
 				data = $("#frm_"+action).serializeArray();
 				$.ajax({
 				  type: "POST",  
-				  url: "empResponse.php",  //change .php
+				  url: "empResponse.php",
 				  data: data,
 				  dataType: "json",       
-				  success: function(empResponse)   //change accordingly
+				  success: function(empResponse)
 				  {
 					$('#'+action+'_model').modal('hide');
 					$("#data_grid").bootgrid('reload');
