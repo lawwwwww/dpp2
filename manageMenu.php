@@ -40,7 +40,7 @@
 		<div class="well clearfix">
 			<div class="pull-right"><button type="button" class="btn btn-xs btn-primary" id="command-add" data-row-id="0">
 			<span class="glyphicon glyphicon-plus"></span> Record</button></div></div>
-		<table id="data_grid" class="table table-condensed table-hover table-striped" width="60%" cellspacing="0" data-toggle="bootgrid">
+		<table id="data_grid" class="table table-condensed table-hover table-striped" width="60%" cellspacing="5" data-toggle="bootgrid">
 			<thead>
 				<tr>
 					<th data-column-id="foodcode" data-type="numeric" data-identifier="true">Food Code</th>
