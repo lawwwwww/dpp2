@@ -43,7 +43,6 @@
 		<table id="data_grid" class="table table-condensed table-hover table-striped" width="60%" cellspacing="0" data-toggle="bootgrid">
 			<thead>
 				<tr>
-			<!--##########################################################################################################-->
 					<th data-column-id="empid" data-type="numeric" data-identifier="true">Employee ID</th>
 					<th data-column-id="name">Name</th>
 					<th data-column-id="address">Address</th>
