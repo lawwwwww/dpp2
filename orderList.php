@@ -102,7 +102,7 @@
 			<button onClick="exportTableToCSV('OrderList.csv')" class="bttn">Generate CSV</button>
 				
 			</div></div>
-<table id="orderdatalist"  class="table table-condensed table-hover table-striped" width="100%" cellspacing="0" data-toggle="bootgrid">
+<table id="orderdatalist"  class="table table-condensed table-hover table-striped" width="100%" cellspacing="5" data-toggle="bootgrid">
 
 <style>
 th
