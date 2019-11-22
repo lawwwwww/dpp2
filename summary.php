@@ -102,7 +102,7 @@
         var data = google.visualization.arrayToDataTable([
           ['Dishname', 'Quantity'],
           <?php
-			$sql="SELECT dishname,COUNT(qty) AS 'qtycount' from ordertable GROUP BY dishname";
+			$sql="SELECT dishname,COUNT(qty) AS 'qtycount' from paymenttable GROUP BY dishname";
 			$sqqql=mysqli_query($conn,$sql);
 			while($res=mysqli_fetch_assoc($sqqql)){
 			echo"['".$res['dishname']."',".$res['qtycount']."],";
@@ -195,7 +195,7 @@
 		echo "<strong>Date : </strong>" . date("Y/m/d") . date(" (l)"). "<br>";
 		
 		echo"</br>";
-		$result = mysqli_query($conn, "SELECT datetime,foodcode,dishname,SUM(amt) AS 'sumamt',COUNT(qty) AS 'qtycount' FROM ordertable
+		$result = mysqli_query($conn, "SELECT datetime,foodcode,dishname,SUM(amt) AS 'sumamt',COUNT(qty) AS 'qtycount' FROM paymenttable
 								GROUP BY (dishname)
 								ORDER BY orderid");
 		
