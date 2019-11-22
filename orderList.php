@@ -100,9 +100,7 @@
 <div class="well clearfix">
 			<div class="pull-right">
 			<button onClick="exportTableToCSV('OrderList.csv')" class="bttn">Generate CSV</button>
-		<a href="summary.php">
-   <button type="button"  class="bttn" >Summary Report</button>
-   </a>
+				
 			</div></div>
 <table id="orderdatalist"  class="table table-condensed table-hover table-striped" width="100%" cellspacing="0" data-toggle="bootgrid">
 
