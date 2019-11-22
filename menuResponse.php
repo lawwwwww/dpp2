@@ -47,7 +47,6 @@
         $start_from = ($page-1) * $rp;
 		
 		$sql = $sqlRec = $sqlTot = $where = '';
-################################################################
 		if( !empty($params['searchPhrase']) ) {   
 			$where .=" WHERE ";
 			$where .=" ( foodcode LIKE '".$params['searchPhrase']."%' ";    
@@ -55,12 +54,12 @@
 			$where .=" OR description LIKE '".$params['searchPhrase']."%' ";
 			$where .=" OR price LIKE '".$params['searchPhrase']."%' ";
 			$where .=" OR img LIKE '".$params['searchPhrase']."%' )";
-	   }#################################################
+	   }
 	   
 	   if( !empty($params['sort']) ) {  
 			$where .=" ORDER By ".key($params['sort']) .' '.current($params['sort'])." ";
 		}
-		###############################################
+		
 	   // getting total number records without any search
 		$sql = "SELECT * FROM `menutable` ";
 		$sqlTot .= $sql;
@@ -92,7 +91,7 @@
 		
 		return $json_data;
 	}
-#################################################	
+		
 	function insertData($params) {
 		$data = array();
 		$sql = "INSERT INTO `menutable` (dishname, description, price, img) VALUES('" . $params["dishname"] . "', '" . $params["description"] . "', '" . $params["price"] . "', '" . $params["img"] . "');  ";
@@ -100,7 +99,6 @@
 		echo $result = mysqli_query($this->conn, $sql);
 	}
 
-##################################################################
 	function updateData($params) {
 		$data = array();
 		
@@ -108,7 +106,7 @@
 		
 		echo $result = mysqli_query($this->conn, $sql);
 	}
-########################################################
+		
 	function deleteData($params) {
 		$data = array();
 		
