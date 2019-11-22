@@ -43,7 +43,6 @@ e<!DOCTYPE html>
 		<table id="data_grid" class="table table-condensed table-hover table-striped" width="60%" cellspacing="5" data-toggle="bootgrid">
 			<thead>
 				<tr>
-			<!--##########################################################################################################-->
 					<th data-column-id="tableno" data-type="numeric" data-identifier="true">Table No</th>
 					<th data-column-id="servestatus">Reserve</th>
 					<th data-column-id="reservedate">Date</th>
@@ -69,7 +68,6 @@ e<!DOCTYPE html>
             <div class="modal-body">
                 <form method="post" id="frm_add">
 				<input type="hidden" value="add" name="action" id="action">
-	<!--##########################################################################################################-->
                   <div class="form-group">
                     <label for="servestatus" class="control-label">Serve Status:</label>
                     <input type="text" class="form-control" id="servestatus" name="servestatus"/>
@@ -107,13 +105,12 @@ e<!DOCTYPE html>
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">Edit Table</h4>  <!--change here oso-->
+                <h4 class="modal-title">Edit Table</h4>  
             </div>
             <div class="modal-body">
                 <form method="post" id="frm_edit">
 				<input type="hidden" value="edit" name="action" id="action">
 				<input type="hidden" value="0" name="edit_id" id="edit_id">
-	<!--##########################################################################################################-->
 				  <div class="form-group">
                     <label for="edit_status" class="control-label">Serve Status:</label>
                     <input type="text" class="form-control" id="edit_status" name="edit_status"/>
@@ -154,12 +151,12 @@ $( document ).ready(function() {
 		post: function ()
 		{
 			// To accumulate custom parameter with the request object 
-			return { //change to db table primary key(id)
+			return { 
 				tableno: "b0df282a-0d67-40e5-8558-c9e93b7befed"
 			};
 		},
 		
-		url: "tablesResponse.php",  // change ur php
+		url: "tablesResponse.php",  
 		formatters: {
 		        "commands": function(column, row)
 		        {																						//Here oso need to change id accordingly
@@ -198,7 +195,7 @@ console.log(g_id);
 	
 		var conf = confirm('Delete ' + $(this).data("row-id") + ' items?');
 					alert(conf);
-                    if(conf){         //change .php          and id 
+                    if(conf){         
                                 $.post('tablesResponse.php', { tableno: $(this).data("row-id"), action:'delete'}
                                     , function(){
                                         // when ajax returns (callback), 
@@ -212,10 +209,10 @@ function ajaxAction(action) {
 				data = $("#frm_"+action).serializeArray();
 				$.ajax({
 				  type: "POST",  
-				  url: "tablesResponse.php",  //change .php
+				  url: "tablesResponse.php", 
 				  data: data,
 				  dataType: "json",       
-				  success: function(tablesResponse)   //change accordingly
+				  success: function(tablesResponse)  
 				  {
 					$('#'+action+'_model').modal('hide');
 					$("#data_grid").bootgrid('reload');
