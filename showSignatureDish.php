@@ -38,14 +38,14 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 		<br/>
 		
 		<h1 align = "center"><?php
-		$maxnum=0;
-		$max=' ';
+		//$maxnum=0;
+		//$max=' ';
 		$sql = mysqli_query($conn,"SELECT foodcode,dishname,MAX(qty) FROM paymenttable");
 		if(mysqli_num_rows($sql)>0)
 		{
 			while($row=mysqli_fetch_array($sql))
 			{	
-	?><img id="cro" src="cro.png" height="80" width="80"/>
+	?><img id="cro" src="crown.png" height="80" width="80"/>
 <?php
 		echo $row["dishname"];
 						?><br/><?php
