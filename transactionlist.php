@@ -112,7 +112,6 @@
 			<th>Quantity</th>
 			<th>Food Code</th>
 			<th>Total Amount</th>
-			<th>Balance</th>
 	
 		</tr>
 	</thead>
@@ -122,7 +121,6 @@
 <!-- fetch data table from DB -->
 	<tbody>
 		<?php
-		error_reporting(0);
 		$result =  mysqli_query($conn, "SELECT * from paymenttable");
 		
 		while ($row = mysqli_fetch_assoc($result)):
@@ -135,7 +133,6 @@
 			<td><?php echo $row['qty']; ?></td>
 			<td><?php echo $row['foodcode']; ?></td>
 			<td><?php echo $row['amt']; ?></td>
-			<td><?php echo $row['Balance']; ?></td>
 		</tr>
 		
 		<?php endwhile; ?>
