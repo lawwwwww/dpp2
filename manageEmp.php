@@ -93,7 +93,10 @@
                   </div>
 				  <div class="form-group">
                     <label for="gender" class="control-label">Gender:</label>
-                    <input type="text" class="form-control" id="gender" name="gender"/>
+                    <select name="gender" id="gender" required type="text" class="form-control">
+						<option value="Male">Male</option>
+						<option value="Female">Female</option>
+					</select>
                   </div>
 				  <div class="form-group">
                     <label for="email" class="control-label">Email:</label>
@@ -144,14 +147,14 @@
                   </div>
 				  <div class="form-group">
                     <label for="edit_role" class="control-label">Role:</label>
-					<select input type="text" class="form-control" id="edit-role" name="edit-role"   >
+					<select name="edit_role" id="edit_role" required type="text" class="form-control">
 						<option value="Staff">Staff</option>
 						<option value="Admin">Admin</option>
 					</select>
                   </div>
 				  <div class="form-group">
                     <label for="edit_gender" class="control-label">Gender:</label>
-					<select name="edit-gender" id="edit-gender" required class="form-control">
+					<select name="edit_gender" id="edit_gender" required type="text" class="form-control">
 						<option value="Male">Male</option>
 						<option value="Female">Female</option>
 					</select>
