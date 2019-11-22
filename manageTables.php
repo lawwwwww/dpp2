@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+e<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -45,7 +45,7 @@
 				<tr>
 			<!--##########################################################################################################-->
 					<th data-column-id="tableno" data-type="numeric" data-identifier="true">Table No</th>
-					<th data-column-id="servestatus">Status</th>
+					<th data-column-id="servestatus">Reserve</th>
 					<th data-column-id="reservedate">Date</th>
 					<th data-column-id="reservetime">Time</th>
 					<th data-column-id="reservename">Name</th>
