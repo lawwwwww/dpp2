@@ -47,7 +47,6 @@
         $start_from = ($page-1) * $rp;
 		
 		$sql = $sqlRec = $sqlTot = $where = '';
-################################################################
 		if( !empty($params['searchPhrase']) ) {   
 			$where .=" WHERE ";
 			$where .=" ( tableno LIKE '".$params['searchPhrase']."%' ";    
@@ -56,12 +55,12 @@
 			$where .=" OR reservetime LIKE '".$params['searchPhrase']."%' ";
 			$where .=" OR reservename LIKE '".$params['searchPhrase']."%' ";
 			$where .=" OR availability LIKE '".$params['searchPhrase']."%' )";
-	   }#################################################
+	   }
 	   
 	   if( !empty($params['sort']) ) {  
 			$where .=" ORDER By ".key($params['sort']) .' '.current($params['sort'])." ";
 		}
-		###############################################
+		
 	   // getting total number records without any search
 		$sql = "SELECT * FROM `tablestable` ";
 		$sqlTot .= $sql;
@@ -92,7 +91,7 @@
 		
 		return $json_data;
 	}
-#################################################	
+		
 	function insertData($params) {
 		$data = array();
 		$sql = "INSERT INTO `tablestable` (servestatus, reservedate, reservetime, reservename, availability) VALUES('" . $params["servestatus"] . "', '" . $params["reservedate"] . "', '" . $params["reservetime"] . "', , '" . $params["reservename"] . "', '" . $params["availability"] . "');  ";
@@ -100,7 +99,6 @@
 		echo $result = mysqli_query($this->conn, $sql);
 	}
 
-##################################################################
 	function updateData($params) {
 		$data = array();
 		
@@ -108,7 +106,7 @@
 		
 		echo $result = mysqli_query($this->conn, $sql);
 	}
-########################################################
+		
 	function deleteData($params) {
 		$data = array();
 		
