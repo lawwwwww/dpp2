@@ -13,7 +13,7 @@ $db = $database->getConnection();
 $user = new User($db);
 // set ID property of user to be edited
 $user->email = isset($_GET['email']) ? $_GET['email'] : die();
-$user->password = base64_encode(isset($_GET['password']) ? $_GET['password'] : die());
+$user->password =(isset($_GET['password']) ? $_GET['password'] : die());
 // read the details of user to be edited
 $stmt = $user->login();
 if($stmt->rowCount() > 0){

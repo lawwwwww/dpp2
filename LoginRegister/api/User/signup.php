@@ -13,7 +13,7 @@ $user = new User($db);
  
 // set user property values
 $user->email = $_POST['email'];
-$user->password = base64_encode($_POST['password']);
+$user->password =($_POST['password']);
 $user->role = $_POST['role'];
 $user->hiredate = date('Y-m-d H:i:s');
 

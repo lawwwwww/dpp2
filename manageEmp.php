@@ -51,7 +51,7 @@
 					<th data-column-id="role">Role</th>
 					<th data-column-id="gender">Gender</th>
 					<th data-column-id="email">Email</th>
-					<th data-column-id="password">Password</th>
+					<th data-column-id="password" data-type="password">Password</th>
 					<th data-column-id="hiredate">Hire Date</th>
 					<th data-column-id="commands" data-formatter="commands" data-sortable="false">Commands</th>
 				</tr>
@@ -85,8 +85,11 @@
                     <input type="text" class="form-control" id="contactinfo" name="contactinfo"/>
                   </div>
 				  <div class="form-group">
-                    <label for="role" class="control-label">Role:</label>
-                    <input type="text" class="form-control" id="role" name="role"/>
+				    <label for="role" class="control-label">Role:</label>
+					<select name="role" id="role" required type="text" class="form-control">
+						<option value="Staff">Staff</option>
+						<option value="Admin">Admin</option>
+					</select>
                   </div>
 				  <div class="form-group">
                     <label for="gender" class="control-label">Gender:</label>
@@ -98,7 +101,7 @@
                   </div>
 				  <div class="form-group">
                     <label for="password" class="control-label">Password:</label>
-                    <input type="password" class="form-control" id="password" name="password"/>
+                    <input type="password" class="form-control" id="password" name="password" data-type="password"/>
                   </div>
 				  <div class="form-group">
                     <label for="hiredate" class="control-label">Hire Date:</label>
@@ -137,15 +140,21 @@
                   </div>
 				  <div class="form-group">
                     <label for="edit_contact" class="control-label">Contact:</label>
-                    <input type="text" class="form-control" id="edit_contact" name="edit_contact"/>
+                    <input type="text" class="form-control" id="edit_contactinfo" name="edit_contactinfo"/>
                   </div>
 				  <div class="form-group">
                     <label for="edit_role" class="control-label">Role:</label>
-                    <input type="text" class="form-control" id="edit_role" name="edit_role"/>
+					<select input type="text" class="form-control" id="edit-role" name="edit-role"   >
+						<option value="Staff">Staff</option>
+						<option value="Admin">Admin</option>
+					</select>
                   </div>
 				  <div class="form-group">
                     <label for="edit_gender" class="control-label">Gender:</label>
-                    <input type="text" class="form-control" id="edit_gender" name="edit_gender"/>
+					<select name="edit-gender" id="edit-gender" required class="form-control">
+						<option value="Male">Male</option>
+						<option value="Female">Female</option>
+					</select>
                   </div>
 				  <div class="form-group">
                     <label for="edit_email" class="control-label">Email:</label>
@@ -153,7 +162,7 @@
                   </div>
 				  <div class="form-group">
                     <label for="edit_password" class="control-label">Password:</label>
-                    <input type="password" class="form-control" id="edit_password" name="edit_password"/>
+                    <input type="password" class="form-control" id="edit_password" name="edit_password" data-type="password"/>
                   </div>
 				  <div class="form-group">
                     <label for="edit_hiredate" class="control-label">Hire Date:</label>
@@ -168,9 +177,10 @@
 			</form>
         </div>
     </div>
-</div>  
+</div>
 </body>
 </html>
+
 <script type="text/javascript">
 $( document ).ready(function() {
 	var grid = $("#data_grid").bootgrid({
@@ -212,7 +222,7 @@ console.log(g_id);
 								// in case we're changing the key
                                 $('#edit_name').val(ele.siblings(':nth-of-type(2)').html());
                                 $('#edit_address').val(ele.siblings(':nth-of-type(3)').html());
-                                $('#edit_contact').val(ele.siblings(':nth-of-type(4)').html());
+                                $('#edit_contactinfo').val(ele.siblings(':nth-of-type(4)').html());
                                 $('#edit_role').val(ele.siblings(':nth-of-type(5)').html());
                                 $('#edit_gender').val(ele.siblings(':nth-of-type(6)').html());
                                 $('#edit_email').val(ele.siblings(':nth-of-type(7)').html());

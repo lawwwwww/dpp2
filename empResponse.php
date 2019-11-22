@@ -104,7 +104,7 @@
 		function updateData($params) {
 		$data = array();
 		//print_R($_POST);die;
-		$sql = "Update `employeetable` set name = '" . $params["edit_name"] . "', address='" . $params["edit_address"]."', contactinfo='" . $params["edit_contactinfo"] . "', role='" . $params["edit_role"]. "', gender='" . $params["edit_gender"]. "', email='" . $params["edit_email"]. "', password='" . $params["edit_password"]. "', hiredate='" . $params["edit_hiredate"]. "' WHERE empid='".$_POST["edit_id"]."'";
+		$sql = "Update `employeetable` set name ='" . $params["edit_name"] . "', address='" . $params["edit_address"]."', contactinfo='" . $params["edit_contactinfo"] . "', role='" . $params["edit_role"]. "', gender='" . $params["edit_gender"]. "', email='" . $params["edit_email"]. "', password='" . $params["edit_password"]. "', hiredate='" . $params["edit_hiredate"]. "' WHERE empid='".$_POST["edit_id"]."'";
 		
 		echo $result = mysqli_query($this->conn, $sql);
 	} 
