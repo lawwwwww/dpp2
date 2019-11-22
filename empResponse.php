@@ -52,11 +52,11 @@
 			$where .=" (  empid LIKE '".$params['searchPhrase']."%' ";
 			$where .=" OR name LIKE '".$params['searchPhrase']."%' ";    
 			$where .=" OR address LIKE '".$params['searchPhrase']."%' ";
-			$where .=" OR contactinfo LIKE '".$params['searchPhrase']."%' )";
-			$where .=" OR role LIKE '".$params['searchPhrase']."%' )";
-			$where .=" OR gender LIKE '".$params['searchPhrase']."%' )";
-			$where .=" OR email LIKE '".$params['searchPhrase']."%' )";
-			$where .=" OR password LIKE '".$params['searchPhrase']."%' )";
+			$where .=" OR contactinfo LIKE '".$params['searchPhrase']."%' ";
+			$where .=" OR role LIKE '".$params['searchPhrase']."%' ";
+			$where .=" OR gender LIKE '".$params['searchPhrase']."%' ";
+			$where .=" OR email LIKE '".$params['searchPhrase']."%' ";
+			$where .=" OR password LIKE '".$params['searchPhrase']."%' ";
 			$where .=" OR hiredate LIKE '".$params['searchPhrase']."%' )";
 	   }
 	   if( !empty($params['sort']) ) {  
