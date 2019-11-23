@@ -35,7 +35,6 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 	  <br/>
         <h1 align = "center"> \^O^/ Signature Dish \^O^/ </h1>
 		<br/>
-		<br/>
 		
 		<h1 align = "center">
 	<?php	
@@ -80,7 +79,7 @@ FROM (SELECT SUM(qty) as qt from paymenttable GROUP BY foodcode)x");
 			while($hh=mysqli_fetch_array($ll))
 			{
 				?><br/>
-	<img src="<?php echo $hh["img"];?>" height="400" width="400"/><br/>
+	<img src="<?php echo $hh["img"];?>" height="450" width="450"/><br/>
 			<?php
 			
 			echo "RM ";
