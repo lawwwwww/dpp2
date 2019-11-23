@@ -38,43 +38,67 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 		<br/>
 		
 		<h1 align = "center">
-	<?php	$sql = mysqli_query($conn,"SELECT foodcode,dishname,SUM(qty) as sumqty FROM paymenttable GROUP BY foodcode ORDER BY sumqty asc");
-		
+	<?php	
+
+$sql = mysqli_query($conn,"SELECT MAX(x.qt) as ma
+FROM (SELECT SUM(qty) as qt from paymenttable GROUP BY foodcode)x");
 
 		if(mysqli_num_rows($sql)>0)
 	{
 			while($row=mysqli_fetch_array($sql))
 		{
-			$tt=$row["foodcode"];	
+			$ty=$row["ma"];
+			?>
+			
+	<?php
+		
+		
 		}
 	}
 	
 	?>
 	
 	<?php
-		$qq=mysqli_query($conn,"SELECT foodcode, dishname,img,price from menutable where foodcode=$tt");
-		if(mysqli_num_rows($qq)>0)
+	$tr=mysqli_query($conn,"SELECT foodcode,dishname,SUM(qty) as qt FROM paymenttable GROUP BY foodcode");
+	
+	if(mysqli_num_rows($tr)>0)
+	{
+		while($rr=mysqli_fetch_array($tr))
 		{
-			while($ww=mysqli_fetch_array($qq))
+			if($rr["qt"]==$ty)
 			{
-	?>
+	?>	
 	<img id="cro" src="crown.png" height="80" width="80"/>
-	
-	<?php
-		echo $ww["dishname"];
-		?><br/>
-	<img src="<?php echo $ww["img"];?>" height="400" width="400"/><br/>
-	
-	<?php
-	echo "RM ";
-	echo $ww["price"];
-	?>
-	<br/>
-
-	<?php	
-					
-			}
+		
+		<?php
+		$tt=$rr["foodcode"];
+		echo $rr["dishname"];
+		
+		$ll=mysqli_query($conn,"SELECT img,foodcode,dishname,price FROM menutable WHERE foodcode=$tt");
+		if(mysqli_num_rows($ll)>0)
+		{
+			while($hh=mysqli_fetch_array($ll))
+			{
+				?><br/>
+	<img src="<?php echo $hh["img"];?>" height="400" width="400"/><br/>
+			<?php
+			
+			echo "RM ";
+			echo $hh["price"];}
 		}
-?>	</div></div>
+		
+		?>
+	<br/>	<br/>
+		
+	<?php
+		}
+	}}
+	?>
+	
+	<?php
+	$yy=mysqli_query($conn,"SELECT foodcode")
+	
+	?>
+	</div></div>
 </body>
 </html>
