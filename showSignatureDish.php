@@ -95,10 +95,7 @@ FROM (SELECT SUM(qty) as qt from paymenttable GROUP BY foodcode)x");
 	}}
 	?>
 	
-	<?php
-	$yy=mysqli_query($conn,"SELECT foodcode")
-	
-	?>
+
 	</div></div>
 </body>
 </html>
