@@ -188,15 +188,18 @@ margin:auto;
 	
 	
 
-	<a href="manageTables.php"><button class="fbutton">MANAGE TABLE</button></a>
+	<a href="manageMenu.php"><button class="fbutton">MANAGE MENU</button></a>
 	
-	<a href="manageEmp.php"><button class="sbutton">MANAGE EMPLOYEE</button></a>
-	<a href="transactionlist.php"><button class="tbutton">TRANSACTION LIST</button></a>
+	<a href="manageTables.php"><button class="sbutton">MANAGE TABLE</button></a>
+	<a href="manageEmp.php"><button class="tbutton">MANAGE EMPLOYEE</button></a>
 	<br/>
 	<br/>
-	<a href="transactionLog.php"><button class="fbutton">TRANSACTION LOG</button></a>
-	<a href="orderlist.php"><button class="fibutton">ORDER LIST</button></a>
-	<a href="http://localhost/dpp2/LoginRegister/"><button class="sibutton">LOGOUT</button></a>
+	<a href="transactionlist.php"><button class="fbutton">TRANSACTION LIST</button></a>
+	<a href="transactionLog.php"><button class="fibutton">TRANSACTION LOG</button></a>
+	<a href="orderlist.php"><button class="sibutton">ORDER LIST</button></a>
+	
+	
+	<a href="http://localhost/dpp2/LoginRegister/"><button class="sebutton">LOGOUT</button></a>
 	
 </body>
 </html>
