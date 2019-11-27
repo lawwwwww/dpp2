@@ -28,7 +28,7 @@ e<!DOCTYPE html>
 				<p id="about"></p></div>
 			</li>
 	
-			<li><a href="http://localhost/dpp2/LoginRegister/">LOGOUT</a></li>
+			<li><a href="LoginRegister">LOGOUT</a></li>
 		</ul>
 </nav>
 
