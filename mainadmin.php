@@ -137,7 +137,7 @@ margin:auto;
 				<p id="about"></p></div>
 			</li>
 	
-			<li><a href="http://localhost/dpp2/LoginRegister/">LOGOUT</a></li>
+			<li><a href="LoginRegister">LOGOUT</a></li>
 		</ul>
 </nav>
 <body>
@@ -199,7 +199,7 @@ margin:auto;
 	<a href="orderlist.php"><button class="sibutton">ORDER LIST</button></a>
 	
 	
-	<a href="http://localhost/dpp2/LoginRegister/"><button class="sebutton">LOGOUT</button></a>
+	<a href="LoginRegister"><button class="sebutton">LOGOUT</button></a>
 	
 </body>
 </html>
