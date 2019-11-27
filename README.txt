@@ -1,9 +1,8 @@
-How To Get All Files From GitHub:
+How To Start:
 ***********************************************************************************************
 *We are using XAMPP to host everything so you need to start the Apache and MySQL from the XAMPP Control panel
 
-Github:
--go to => https://github.com/lawwwwww/dpp2 and clone the file
+*Unzip the file and make sure file name is "dpp2"
 -move the file to htdocs in your XAMPP folder
 
 Importing the database:
@@ -11,11 +10,11 @@ Importing the database:
 -Then create new database named "cafedb".
 -go to import then select the sql files from a folder named "Models" and click 'Go' after every upload.
 *Database contains 5 tables.
-***************************************************************************************************
+*************************************************************************************************
 
 Get Into The Website:
 *******************************************************
--visit http://localhost/dpp2/LoginRegister/
+-visit http://localhost/dpp2/dpp2/LoginRegister/
 -For new members click on sign up
 *clicking on "Already a member" leads to sign in page.
 *******************************************************
