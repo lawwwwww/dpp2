@@ -49,7 +49,7 @@
 			<li><a href="main.php">HOME</a></li>
 			<li><a href="showtable.php">TABLE SUMMARY</a></li>
 			<li><a href="showSignatureDish.php">SIGNATURE FOOD</a></li>
-			<li><a href="http://localhost/dpp2/LoginRegister/">LOGOUT</a></li>
+			<li><a href="LoginRegister">LOGOUT</a></li>
 		</ul>
 </nav>
 <body>
