@@ -51,7 +51,7 @@ if($stmt->rowCount() > 0){
 else{
 	?><script>
 	alert("Invalid email or Password");
-	window.location.href = "http://localhost/dpp2/LoginRegister/";</script><?php
+	window.location.href = "../../../LoginRegister";</script><?php
 	
 }
 ?>
